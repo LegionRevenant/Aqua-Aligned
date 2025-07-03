@@ -27,10 +27,24 @@
 ---
 
 ## 🖱 How to Use(Local Setup)
-1. Downlaod the zip file
-2. Open VS code
-3. Install dependencies (npm install)
-4. Connect sketch file to IoT Device via USB A to C data cable
-5. Run the Server (node server.cjs)
-6. Run the Frontend (npm run dev)
-7. Access the App
+1. Download the zip file
+2. Download and impot the database file and name the database "aquaaligned"
+3. Open VS code
+4. Install dependencies (npm install)
+5. Connect IoT Device via USB A to C data cable
+6. Download and open sketch file, change the ssid and password to your WiFi's, and the IP in serverUrl to match your Ip address
+7. Run the Server (node server.cjs)
+8. Run the Frontend (npm run dev)
+9. Access the App
+
+---
+
+## Screenshots of working prototype
+![Image](assets/Login.png)
+
+![Image](assets/Dashboard.png)
+
+![Image](assets/LogsView.png)
+
+![Image](assets/Settings.png)
+
