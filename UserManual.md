@@ -28,12 +28,12 @@
 
 ## 🖱 How to Use(Local Setup)
 1. Download the zip file
-2. Download and impot the database file and name the database "aquaaligned"
+2. Download and import the database file
 3. Open VS code
 4. Install dependencies (npm install)
 5. Connect IoT Device via USB A to C data cable
 6. Download and open sketch file, change the ssid and password to your WiFi's, and the IP in serverUrl to match your Ip address
-7. Run the Server (node server.cjs)
+7. Run the Server (node server.cjs) and mmake sure to open Xampp beforehand
 8. Run the Frontend (npm run dev)
 9. Access the App
 
