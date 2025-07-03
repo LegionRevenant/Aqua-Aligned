@@ -19,3 +19,10 @@
 ## 📗 User Manual 
 [USER MANUAL.md](UserManual.md)
 ---
+
+---
+## Developers 
+1. John Herbert Yncierto
+2. Dan Blair Bapilar
+3. John Lawrence ALovera
+---
