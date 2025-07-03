@@ -27,10 +27,10 @@
 ---
 
 ## 🖱 How to Use(Local Setup)
-1. Clone the Repository
-2. Install Dependencies
-3. Set Up Environment Variables
+1. Downlaod the zip file
+2. Open VS code
+3. Install dependencies (npm install)
 4. Connect sketch file to IoT Device via USB A to C data cable
-5. Run the Server
-6. Run the Frontend
+5. Run the Server (node server.cjs)
+6. Run the Frontend (npm run dev)
 7. Access the App
