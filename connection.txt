@@ -1,0 +1,99 @@
+#include <OneWire.h>
+#include <DallasTemperature.h>
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+//connection
+const char* ssid = "Yncierto1";        
+const char* password = "OMGFML123";
+
+const char* serverUrl = "http://192.168.183.177:3001/sensor-data";
+
+#define ONE_WIRE_BUS 4  
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature sensors(&oneWire);
+
+
+#define TRIG_PIN 5   
+#define ECHO_PIN 18  
+
+long duration;
+float distanceCm;
+
+void setup() {
+  Serial.begin(115200);
+
+
+  sensors.begin();
+
+
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+
+//connect to wifi
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting to WiFi...");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println(" Connected!");
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
+
+
+}
+
+void loop() {
+//temp
+  sensors.requestTemperatures();
+  float tempC = sensors.getTempCByIndex(0); 
+
+//distance
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  duration = pulseIn(ECHO_PIN, HIGH);
+  distanceCm = duration * 0.034 / 2;
+
+
+  Serial.print("Temperature: ");
+  Serial.print(tempC);
+  Serial.println(" °C");
+
+  Serial.print("Water Level Distance: ");
+  Serial.print(distanceCm);
+  Serial.println(" cm");
+
+//data to server
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    http.begin(serverUrl);
+    http.addHeader("Content-Type", "application/json");
+
+    
+    String jsonPayload = "{\"temperature\":" + String(tempC, 2) + 
+                         ", \"distance_cm\":" + String(distanceCm, 2) + "}";
+
+    int httpResponseCode = http.POST(jsonPayload);
+    Serial.println("Payload: " + jsonPayload);
+
+    if (httpResponseCode > 0) {
+      Serial.print("POST success, code: ");
+      Serial.println(httpResponseCode);
+    } else {
+      Serial.print("POST failed, error: ");
+      Serial.println(http.errorToString(httpResponseCode).c_str());
+    }
+
+    http.end();
+  } else {
+    Serial.println("WiFi not connected!");
+  }
+
+  delay(2000); 
+}
