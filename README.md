@@ -1,4 +1,4 @@
-# Welcome to AquaAligned
+# 💧Welcome to AquaAligned
 
 <p align="center">
   <img src="assets/BAY.jpg" width="300" alt="DentalLens Logo"/>
@@ -17,5 +17,5 @@
 
 ---
 ## 📗 User Manual 
-
+[USER MANUAL.md](UserManual.md)
 ---
