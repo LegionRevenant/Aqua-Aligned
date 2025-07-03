@@ -1,4 +1,4 @@
-# AquaAligned User Manual
+# 💧AquaAligned User Manual
 
 **AquaAligned** is a web-integrated IoT application that enables users to monitor water tank levels and temperature in real-time. By leveraging sensor data and automated logging, the system helps prevent overflows, detect usage patterns, and promote smarter water management through an intuitive dashboard and historical tracking.
 
@@ -15,7 +15,7 @@
 
 ---
 
-## 🔁 How It Works
+## 🖥️ How It Works
 
 1. **HC-SR04 ultrasonic sensor** and **DS18B20 temperature sensor** collect water data.
 2. Data is transmitted via **ESP32/NodeMCU** to a backend server.
@@ -39,7 +39,7 @@
 
 ---
 
-## Screenshots of working prototype
+## 📷Screenshots of working prototype
 ![Image](assets/Login.png)
 
 ![Image](assets/Dashboard.png)
