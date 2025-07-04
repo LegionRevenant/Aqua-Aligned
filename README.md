@@ -1,7 +1,7 @@
 # 💧Welcome to AquaAligned
 
 <p align="center">
-  <img src="assets/BAY.jpg" width="300" alt="DentalLens Logo"/>
+  <img src="assets/BAY.jpg" width="300" alt="BAY Logo"/>
 </p>
 
 **AquaAligned** is a web-integrated water monitoring system powered by IoT technology. It enables real-time tracking of water tank levels and temperature through ultrasonic sensors, providing users with live data, usage history, and automated alerts. Designed for households and small facilities, AquaAligned promotes efficient water management, reduces waste, and supports sustainability — especially in areas with limited access to reliable water monitoring.
